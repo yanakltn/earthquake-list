@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+// context
+import { EarthquakeContext } from "./context/EarthquakeContext";
+// components
+import EarthquakeList from "./components/EarthquakeList";
+// mui
+import { Box, CircularProgress, Container } from "@mui/material";
+// styles
+import { StyledBox, StyledHeading } from "./styles";
 
-function App() {
+const App: React.FC = () => {
+  const { earthquakes = [], isLoading = true } =
+    useContext(EarthquakeContext) || {};
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledBox>
+      <Container maxWidth="lg">
+        <Box alignItems="center" display="flex" flexDirection="column">
+          {isLoading ? (
+            <CircularProgress />
+          ) : (
+            <Box>
+              <StyledHeading variant="h2">USGS Earthquakes</StyledHeading>
+              <EarthquakeList earthquakes={earthquakes} />
+            </Box>
+          )}
+        </Box>
+      </Container>
+    </StyledBox>
   );
-}
+};
 
 export default App;
