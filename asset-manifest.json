@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/earthquake-list/static/js/main.eb82c047.js",
+    "static/js/453.183ca412.chunk.js": "/earthquake-list/static/js/453.183ca412.chunk.js",
+    "static/media/background.webp": "/earthquake-list/static/media/background.fc1fea688f76142feebf.webp",
+    "index.html": "/earthquake-list/index.html",
+    "main.eb82c047.js.map": "/earthquake-list/static/js/main.eb82c047.js.map",
+    "453.183ca412.chunk.js.map": "/earthquake-list/static/js/453.183ca412.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.eb82c047.js"
+  ]
+}
